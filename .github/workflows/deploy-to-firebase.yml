@@ -1,0 +1,73 @@
+name: Build and Deploy Firebase
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    
+    name: Build
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.5]
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+          
+      - name: Install Dependencies
+        run: npm ci
+        
+#       - name: Build Stage
+#         if: github.ref == 'refs/heads/dev'
+#         run: npm run build:stage
+        
+#       - name: Build Production
+#         if: github.ref == 'refs/heads/master'
+#         run: npm run build:prod
+        
+      - name: Log dist output
+        run: ls -alt public/
+        
+      - name: Archive Artifact (Build)
+        uses: actions/upload-artifact@v1
+        with:
+          name: public
+          path: public
+
+  deploy:
+    
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v1
+      - name: Download Artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: public
+
+#       - name: Deploy to Stage
+#         if: github.ref == 'refs/heads/dev'
+#         uses: w9jds/firebase-action@master
+#         with:
+#           args: deploy --only hosting --project ${{ secrets.FIREBASE_STAGE_PROJECT_ID }}
+#         env:
+#           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          
+      - name: Deploy to Production
+        if: github.ref == 'refs/heads/master'
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting --project ${{ secrets.FIREBASE_PROJECT_ID }}
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
