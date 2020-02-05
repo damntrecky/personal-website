@@ -100,12 +100,14 @@ h3 { color:var(--tertiary--accent); }
   display: flex;
 }
 
+.icon[hidden] { opacity:0; }
 .icon {
   display: flex;
   flex-direction: column;
   transition: all .2s ease-in;
   /* set a default translate position for JS fnc below */
   transform: translateX(0px);
+  opacity:1;
 }
 
 .icon svg {

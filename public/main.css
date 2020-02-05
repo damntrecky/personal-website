@@ -9,8 +9,3 @@ section[data-snap] {
 [data-section~="secondary"] {
   background: var(--grey--1);
 }
-
-canvas {
-  height: 800px;
-  width: 100%;
-}
