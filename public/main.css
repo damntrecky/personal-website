@@ -1,0 +1,16 @@
+section[data-snap] {
+  scroll-snap-align: start;
+}
+
+[data-section] {
+  height:100%;
+}
+
+[data-section~="secondary"] {
+  background: var(--grey--1);
+}
+
+canvas {
+  height: 800px;
+  width: 100%;
+}

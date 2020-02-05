@@ -1,0 +1,150 @@
+:root {
+  --main--accent:#6772e5;
+  --secondary--accent:rgb(255, 162, 123);
+  --tertiary--accent:#424242;
+
+  --grey--0: #ffffff;
+  --grey--1: #f5f5f5;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: var(--grey--1);
+  overflow-x: hidden;
+  font-family: "Avenir", "Nunito Sans", "Lucida Sans Unicode", sans-serif;
+  scroll-snap-type: y mandatory;
+}
+
+h1 { color: var(--main--accent); }
+h2 { color: var(--secondary--accent); }
+h3 { color:var(--tertiary--accent); }
+
+.main--container {
+  width: 100%;
+  position: relative;
+  height: 60vh;
+  min-height: 480px;
+  max-height: 640px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+
+
+.StripeBackground {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  right: 0;
+  -webkit-transform: skewY(-12deg);
+  transform: skewY(-12deg);
+  pointer-events: none;
+  top: calc(50% + 310px);
+}
+
+.StripeBackground .stripe {
+  position: absolute;
+  top: auto;
+  left: 0;
+  right: 0;
+  height: 200px;
+}
+
+.StripeBackground .s0 {
+  height: 5000px;
+  bottom: 200px;
+  bottom: calc(200px * 1);
+  background: -webkit-gradient(linear, left top, right top, from(#e4ecf5), to(#f5fdff));
+  background: linear-gradient(90deg, #e4ecf5, #f5fdff);
+}
+
+.StripeBackground .s1 {
+  bottom: 0;
+  left: calc(50% + 220px);
+  background: -webkit-gradient(linear, left top, right top, from(#f4fafd), to(#eff8fc));
+  background: linear-gradient(90deg, #f4fafd, #eff8fc);
+}
+
+.StripeBackground .s2 {
+  bottom: 200px;
+  bottom: calc(200px * 1);
+  right: calc(50% - 220px);
+  background: -webkit-gradient(linear, left top, right top, from(#d6e3f0), to(#e7f3fa));
+  background: linear-gradient(90deg, #d6e3f0, #e7f3fa);
+}
+
+.StripeBackground .s3 {
+  bottom: 600px;
+  bottom: calc(200px * 3);
+  left: 10%;
+  right: calc(50% - 300px);
+  background: -webkit-gradient(linear, left top, right top, from(#ecf4fa), to(#e4eff6));
+  background: linear-gradient(90deg, #ecf4fa, #e4eff6);
+}
+
+/* make width really wide so icons are never scrunched together */
+.icons--container {
+  width: 3000px;
+  height: 360px;
+  position: relative;
+  left: 50px;
+  z-index: 800;
+  display: flex;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  transition: all .2s ease-in;
+  /* set a default translate position for JS fnc below */
+  transform: translateX(0px);
+}
+
+.icon svg {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  box-shadow: 0 1px 12px rgba(0, 0, 0, .1);
+}
+
+.icon span {
+  text-align: center;
+  opacity: 0;
+  transition: opacity .2s ease-in;
+  background: #fff;
+  padding: 3px 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+  margin-top: 4px;
+  /* @TODO calculate centering tooltip */
+}
+
+.icon[active] span,
+.icon:hover span {
+  opacity: 1;
+}
+
+.icon:nth-child(2n) {
+  align-self: flex-end;
+}
+
+.icon:nth-child(3n) {
+  align-self: center;
+}
+
+.icon:nth-child(4n) {
+  align-self: flex-end;
+}
+
+.headline--container {
+  text-align: center;
+  z-index: 900;
+}
