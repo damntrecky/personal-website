@@ -32,7 +32,7 @@ class Shape {
    */
   init() {
 
-    console.log(this)
+    // console.log(this)
     // this.intervalId = setInterval(this.animateShape.bind(this),  this.GSPEED_OF_ICONS);
   }
 
