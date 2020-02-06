@@ -4,10 +4,10 @@ class Shape {
     this.icon = domRef;
     // initialize globals
     // global speed of icons yo
-    this.GSPEED_OF_ICONS = 200;
+    this.GSPEED_OF_ICONS = 122;
     // Delta range of random offset (used as a multiplier)
     this.GX_OFFSET_RANGE = 5;
-    this.GY_OFFSET_RANGE = 15;
+    this.GY_OFFSET_RANGE = 5;
     this.GY_STARTING_OFFSET = 2;
     // define a starting position for ALL icons
 
@@ -57,7 +57,7 @@ class Shape {
 
     if (boundingClient.right < -200) {
       this.gXPos = window.innerWidth + this.startingPos;
-      this.icon.setAttribute('hidden', '');
+      // this.icon.setAttribute('hidden', '');
     } 
     
     // try to hide icons as they animate back across
