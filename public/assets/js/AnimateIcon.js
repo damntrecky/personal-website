@@ -1,4 +1,4 @@
-class Shape {
+class AnimateIcon {
   constructor(domRef) {
     // grab reference to dom node
     this.icon = domRef;
