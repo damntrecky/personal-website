@@ -7,7 +7,7 @@ class Shape {
     this.GSPEED_OF_ICONS = 122;
     // Delta range of random offset (used as a multiplier)
     this.GX_OFFSET_RANGE = 5;
-    this.GY_OFFSET_RANGE = 5;
+    this.GY_OFFSET_RANGE = 4;
     this.GY_STARTING_OFFSET = 2;
     // define a starting position for ALL icons
 

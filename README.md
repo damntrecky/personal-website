@@ -1,4 +1,8 @@
 # [nickardecky.com](https://www.nickardecky.com)
+
+![](https://github.com/damntrecky/personal-website/workflows/Build%20and%20Deploy%20Firebase/badge.svg?branch=master)
+
+
 A personal website to display information about my work life, my internet persona and personal infos about me.
 
 ## Personal Links

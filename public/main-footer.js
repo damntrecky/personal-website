@@ -10,7 +10,7 @@ setInterval(function() {
   classIcons.forEach(shape => {
     shape.animateShape();
   })
-}, 122);
+}, 200);
 
 // friendly note to the users
 console.log('%cWelcome to %cNick damntrecky\'s%c website', 'color:#777;font-size:12px;', 'color:#6772e5;font-size:14px;', 'color:#777;font-size:14px;');
