@@ -6,13 +6,8 @@ window.addEventListener('load', () => {
   const iconsToAnimate = document.querySelectorAll('.icon');
   const classIcons = [];
   [...iconsToAnimate].forEach(icon => {
-    classIcons.push(new AnimateIcon(icon));
+    let iconClassRef = new AnimateIcon(icon);
+    classIcons.push(iconClassRef);
   });
-
-  setInterval(function() {
-    classIcons.forEach(shape => {
-      shape.animateShape();
-    })
-  }, 200);
 
 });
