@@ -138,7 +138,9 @@ class AnimateIcon {
   _handleMouseDown(e) {
     console.log('mousedown');
     this.TOUCH_START = true;
-    this.mouseX = e.x;
+    this.mouseDownX = e.x;
+    let currentTranslatedPosition = this.icon.style.transform.match(this.gTransformMatch);
+    this.mouseDownTranslated = Number.parseFloat(currentTranslatedPosition[0])
     this.clearAnimationInterval();
   }
 
@@ -151,9 +153,9 @@ class AnimateIcon {
       this.TOUCH_MOVING = true;
       console.log('mousemove');
       let currentTranslatedPosition = this.icon.style.transform.match(this.gTransformMatch);
-      let xVal = e.x - this.mouseX;
+      let xVal = e.x - this.mouseDownX + this.mouseDownTranslated;
       let yPos = currentTranslatedPosition[1].split('px')[0];
-      console.log(xVal, yPos);
+      console.log(xVal, this.mouseDownTranslated);
       this.animateIcon(xVal, yPos);
     } 
   }
