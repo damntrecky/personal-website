@@ -1,0 +1,29 @@
+{
+  "name": "nick-ardecky-personal-website",
+  "version": "1.0.0",
+  "description": "A website for web developer nick ardecky.",
+  "main": "public/index.html",
+  "scripts": {
+    "dev": "http-server public/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/damntrecky/personal-website.git"
+  },
+  "keywords": [
+    "web",
+    "developer",
+    "JavaScript",
+    "nick",
+    "ardecky"
+  ],
+  "author": "Nick Ardecky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/damntrecky/personal-website/issues"
+  },
+  "homepage": "https://github.com/damntrecky/personal-website#readme",
+  "dependencies": {
+    "http-server": "^0.12.3"
+  }
+}
