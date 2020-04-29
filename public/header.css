@@ -2,9 +2,11 @@
   --main--accent:#6772e5;
   --secondary--accent:rgb(255, 162, 123);
   --tertiary--accent:#424242;
-
+  
   --grey--0: #ffffff;
   --grey--1: #f5f5f5;
+
+  --link--main: #42a5f5;
 }
 
 html,
@@ -149,4 +151,14 @@ h3 { color:var(--tertiary--accent); }
 .headline--container {
   text-align: center;
   z-index: 900;
+  padding:5px;
+}
+
+.headline--container p {
+  color: var(--tertiary--accent, #424242);
+  font-size: .9rem;
+}
+
+.headline--container a {
+  color: var(--link--main);
 }
