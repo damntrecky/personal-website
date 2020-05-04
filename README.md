@@ -10,6 +10,7 @@ A personal website for JavaScript developer and data viz product specialist [Nic
 2. [Code Sandbox](https://codesandbox.io/u/damntrecky)
 3. [Codepen](https://codepen.io/nardecky/)
 4. [Glitch](https://glitch.com/@damntrecky)
+5. [Stack Overflow](https://stackoverflow.com/users/5712661/nardecky?tab=profile)
 
 ## Company Links
 
