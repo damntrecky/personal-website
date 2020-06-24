@@ -162,3 +162,18 @@ h3 { color:var(--tertiary--accent); }
 .headline--container a {
   color: var(--link--main);
 }
+
+.button {
+  width: 100px;
+  padding: 3px 5px;
+  border: 2px solid var(--secondary--accent);
+  margin: 3rem auto auto auto;
+  cursor: pointer;
+}
+
+.button:hover:after { 
+  content: "→";
+  color: var(--tertiary--accent);
+}
+
+.button a { text-decoration:none; }

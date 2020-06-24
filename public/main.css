@@ -9,3 +9,10 @@ section[data-snap] {
 [data-section~="secondary"] {
   background: var(--grey--1);
 }
+
+@media screen and (min-width:1600px) {
+  .icon {
+    margin-right:20px;
+    margin-left:20px;
+  }
+}

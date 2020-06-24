@@ -1,9 +1,10 @@
 {
   "name": "nick-ardecky-personal-website",
   "version": "1.0.0",
-  "description": "A website for web developer nick ardecky.",
+  "description": "A website for web developer Nick Ardecky.",
   "main": "public/index.html",
   "scripts": {
+    "start": "npm run dev",
     "dev": "http-server public/"
   },
   "repository": {
@@ -11,6 +12,8 @@
     "url": "git+https://github.com/damntrecky/personal-website.git"
   },
   "keywords": [
+    "personal site",
+    "software engineer",
     "web",
     "developer",
     "JavaScript",

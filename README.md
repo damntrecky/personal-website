@@ -19,4 +19,4 @@ A personal website for JavaScript developer and data viz product specialist [Nic
 3. [ZingSoft Studio](https://app.zingsoft.com) - Vue.js Studio for building demos and client relations
 4. [ZingSoft](https://www.zingsoft.com) - **ZingSoft Inc. is the company I work for**
 5. [Playfair](https://playfair.studio) - Playfair is a data viz agency I do work for
-6. [PINT](https://www.pint.com) - PINT is a web development agency I do work for
+6. [PINT](https://www.pint.com) - PINT is a web development agency I do work for. **PINT is also my employer.**
