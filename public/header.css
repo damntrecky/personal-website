@@ -164,7 +164,7 @@ h3 { color:var(--tertiary--accent); }
 }
 
 .button {
-  width: 100px;
+  width: 150px;
   padding: 3px 5px;
   border: 2px solid var(--secondary--accent);
   margin: 3rem auto auto auto;
