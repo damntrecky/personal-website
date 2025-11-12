@@ -1,6 +1,6 @@
 # Personal Website 
 
-A personal website for JavaScript developer and data viz product specialist [Nick Ardecky](https://www.nickardecky.com). This website is to display information about my work life, my internet persona and personal info's about me.
+A personal website for ~~JavaScript~~ Typescript lover and data viz product specialist [Nick Ardecky](https://www.nickardecky.com). This website is to display information about my work life, my internet persona and personal info's about me.
 
 ![](https://github.com/damntrecky/personal-website/workflows/Build%20and%20Deploy%20Firebase/badge.svg?branch=master)
 
@@ -14,10 +14,13 @@ A personal website for JavaScript developer and data viz product specialist [Nic
 
 ## Company Links
 
-1. [Amazon AWS](https://aws.amazon.com/devops-guru/?nc2=type_a) - DevOps Guru product team
-2. [ZingGrid](https://www.zinggrid.com) - JavaScript grid library
-3. [ZingChart](https://www.zingchart.com) - JavaScript charting library
-4. [ZingSoft Studio](https://app.zingsoft.com) - Vue.js Studio for building demos and client relations
-5. [ZingSoft](https://www.zingsoft.com) - **ZingSoft Inc. is the company I work for**
-6. [Playfair](https://playfair.studio) - Playfair is a data viz agency I do work for
-7. [PINT](https://www.pint.com) - PINT is a web development agency I do work for. **PINT is also my employer.**
+1. [Amazon AFT](https://amazon.jobs/content/en/teams/ftr) - Amazon Fulfillment Technologies and Robotics teamteam
+2. [Amazon AtoZ](https://aws.amazon.com/devops-guru/?nc2=type_a) - AtoZ Mobile Application
+3. [Amazon AWS](https://marketplace.visualstudio.com/items?itemName=AmazonWebServices.amazon-q-vscode) - Amazon Q IDE code plugin
+4. [Amazon AWS](https://aws.amazon.com/devops-guru/?nc2=type_a) - DevOps Guru product team
+5. [ZingGrid](https://www.zinggrid.com) - JavaScript grid library
+6. [ZingChart](https://www.zingchart.com) - JavaScript charting library
+7. [ZingSoft Studio](https://app.zingsoft.com) - Vue.js Studio for building demos and client relations
+8. [ZingSoft](https://www.zingsoft.com) - The parent holding company for ZingChart and Zingrid.
+9. [Playfair](https://playfair.studio) - Playfair is a data viz agency I do work for
+10. [PINT](https://www.pint.com) - PINT is a web development agency I do work for. 
