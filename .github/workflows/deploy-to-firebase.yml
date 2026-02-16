@@ -6,8 +6,7 @@ on:
       - ci-test
 
 jobs:
-  # build:
-    
+  # build: 
   #   name: Build
   #   runs-on: ubuntu-latest
   #   strategy:
@@ -35,7 +34,6 @@ jobs:
   #         path: public
 
   deploy:
-    
     name: Deploy
     # needs: build
     runs-on: ubuntu-latest
