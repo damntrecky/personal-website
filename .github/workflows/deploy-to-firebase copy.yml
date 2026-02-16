@@ -3,7 +3,7 @@ name: Build and Deploy Firebase
 on:
   push:
     branches:
-      - ci-test
+      - master
 
 jobs:
   # build:
@@ -51,7 +51,6 @@ jobs:
         if: github.ref == 'refs/heads/master'
         uses: w9jds/firebase-action@master
         with:
-          args: deploy --only hosting
+          args: deploy --only hosting --project ${{ secrets.FIREBASE_PROJECT_ID }}
         env:
-          GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
-          PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
