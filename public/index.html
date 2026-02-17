@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="wa-theme-awesome wa-palette-bright wa-brand-blue">
+<html lang="en" class="wa-theme-awesome wa-palette-bright">
 
   <head>
     <meta charset="UTF-8" />
@@ -18,12 +18,14 @@
     <meta name="twitter:site" content="@nardecky">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     
-    <!-- import prefixed/minified styles -->
-    <link rel="stylesheet" type="text/css" href="header.css">
-    <link rel="stylesheet" type="text/css" href="main.css">
+    <!-- Priority styles loaded first -->
+    <link rel="stylesheet" type="text/css" href="header.css" />
 
     <!-- Import webawesome web-component assets from local -->
-    <link rel="stylesheet" href="assets/webawesome/styles/themes/awesome.css" />
+    <link rel="stylesheet" type="text/css" href="assets/webawesome/styles/themes/awesome.css" />
+
+    <!-- Secondary styles applied after web-awesome -->
+    <link rel="stylesheet" type="text/css" href="main.css" />
 
   </head>
 
@@ -167,13 +169,21 @@
         
         <div class="employment-cards--container">
           <wa-card class="card-header">
-            <h3 slot="header">Current Employment</h3>
-            <p>Currently contracting and open to part-time or full-time opportunities.</p>
-            <p>I'm a Senior Front-End Engineer with 10+ years of experience building high-scale web applications. Expert in TypeScript, React, Web Components, and modern JavaScript performance optimization. Proven track record leading end-to-end development of production consoles and developer tools used by thousands, with extensive AWS and CI/CD expertise. Open to full-time or part-time opportunities.</p>
+            <!-- Slotted card content -->
+            <h3 slot="header">About me</h3>
+            <div slot="header-actions">
+              <wa-badge appearance="accent" variant="brand">Full time sender</wa-badge>
+            </div>
+            <p>Outside of work, I enjoy dirt biking, snowboarding, and mountain biking, often on my dirt jumper. Fun fact, I've broken over 26 bones! My favorite sport to watch is soccer, which I recently stopped playing competitively. I also spend time on hobbies like building out my van, working on cars, and exploring new areas of life such as learning Portuguese and Jiu Jitsu.</p>
+            <p>I'm a Senior Front-End Engineer with 10+ years of experience building high-scale web applications. I specialize in TypeScript, React, Web Components, and modern JavaScript performance optimization. I have a proven track record leading end-to-end development of production consoles and developer tools used by thousands, with extensive AWS and CI/CD expertise. I'm open to full-time or part-time opportunities.</p>
           </wa-card>
 
           <wa-card class="card-header">
-            <h3 slot="header">Previous Employment</h3>
+            <!-- Slotted card content -->
+            <h3 slot="header">Previous employment</h3>
+            <div slot="header-actions">
+              <wa-badge appearance="accent" variant="brand">Check out these skillz</wa-badge>
+            </div>
             <ul>
               <li>
                 Previously employed at <a href="https://amazon.jobs/content/en/teams/ftr" rel="noreferrer noopener">Amazon AFT</a>,
@@ -222,6 +232,7 @@
     <script defer type="module"src="assets/webawesome/components/card/card.js"></script>
     <script defer type="module"src="assets/webawesome/components/button/button.js"></script>
     <script defer type="module"src="assets/webawesome/components/icon/icon.js"></script>
+    <script defer type="module"src="assets/webawesome/components/badge/badge.js"></script>
 
   </body>
 </html>
