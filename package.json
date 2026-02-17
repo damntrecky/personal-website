@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/damntrecky/personal-website#readme",
   "dependencies": {
+    "@awesome.me/webawesome": "^3.2.1",
     "http-server": "^0.12.3"
   }
 }

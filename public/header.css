@@ -23,7 +23,7 @@ body {
 
 h1 { color: var(--main--accent); }
 h2 { color: var(--secondary--accent); }
-h3 { color:var(--tertiary--accent); }
+h3 { color: var(--tertiary--accent); }
 
 .main--container {
   width: 100%;
@@ -38,8 +38,6 @@ h3 { color:var(--tertiary--accent); }
   -ms-flex-align: center;
   align-items: center;
 }
-
-
 
 .StripeBackground {
   position: absolute;
@@ -148,7 +146,8 @@ h3 { color:var(--tertiary--accent); }
   align-self: flex-end;
 }
 
-.headline--container {
+.headline--container,
+.previous-work--container {
   text-align: center;
   z-index: 900;
   padding:5px;
@@ -156,24 +155,40 @@ h3 { color:var(--tertiary--accent); }
 
 .headline--container p {
   color: var(--tertiary--accent, #424242);
-  font-size: .9rem;
+  font-weight: 500;
 }
 
-.headline--container a {
+.content--wrapper a {
   color: var(--link--main);
 }
 
-.button {
-  width: 150px;
-  padding: 3px 5px;
-  border: 2px solid var(--secondary--accent);
-  margin: 3rem auto auto auto;
-  cursor: pointer;
+
+/* Style employment card positioning */
+.employment-cards--container {
+  display: flex;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  flex-wrap: wrap;
 }
 
-.button:hover:after { 
-  content: "→";
-  color: var(--tertiary--accent);
+.employment-cards--container wa-card {
+  flex: 1;
+  min-width: 300px;
 }
 
-.button a { text-decoration:none; }
+/* style employment card content */
+.employment-cards--container wa-card li {
+  text-align:left;
+  margin-bottom: 0.5rem;
+}
+
+/* Style resume action button */
+.resume-action--container {
+  text-align: center;
+  margin-top: 2rem;
+}
+.resume-action--container wa-button {   
+  text-decoration:none;
+}
