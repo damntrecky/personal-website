@@ -4,8 +4,9 @@
   "description": "A website for web developer Nick Ardecky.",
   "main": "public/index.html",
   "scripts": {
-    "start": "npm run dev",
-    "dev": "http-server public/"
+    "build": "echo 'No build step necessary for this project.'",
+    "dev": "http-server public/",
+    "start": "npm run dev"
   },
   "repository": {
     "type": "git",
@@ -26,8 +27,11 @@
     "url": "https://github.com/damntrecky/personal-website/issues"
   },
   "homepage": "https://github.com/damntrecky/personal-website#readme",
-  "dependencies": {
+  "devDependencies": {
     "@awesome.me/webawesome": "^3.2.1",
     "http-server": "^0.12.3"
+  },
+  "engines": {
+    "node": ">=20.0.0"
   }
 }

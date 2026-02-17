@@ -2,7 +2,8 @@
 
 A personal website for ~~JavaScript~~ Typescript lover and data viz product specialist [Nick Ardecky](https://www.nickardecky.com). This website is to display information about my work life, my internet persona and personal info's about me.
 
-[![Build and Deploy Firebase](https://github.com/damntrecky/personal-website/actions/workflows/firebase-hosting-deploy.yml/badge.svg)](https://github.com/damntrecky/personal-website/actions/workflows/firebase-hosting-deploy.yml)
+![](https://github.com/damntrecky/personal-website/workflows/Build%20and%20Deploy/badge.svg)
+[![Lighthouse CI](https://github.com/damntrecky/personal-website/actions/workflows/lighthouse.yml/badge.svg)](https://github.com/damntrecky/personal-website/actions/workflows/lighthouse.yml)
 
 ## Personal Links
 

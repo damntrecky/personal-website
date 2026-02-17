@@ -1,0 +1,50 @@
+name: Lighthouse CI
+on:
+  workflow_run:
+    workflows: ["Build and Deploy"]
+    types:
+      - completed
+    branches:
+      - master
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Lighthouse CI
+        id: lhci
+        uses: treosh/lighthouse-ci-action@v12
+        continue-on-error: true
+        with:
+          configPath: ./lighthouserc.json
+          uploadArtifacts: true
+      - name: Prepare Pages report
+        if: always()
+        run: |
+          report=$(ls -t .lighthouseci/*.html 2>/dev/null | head -n 1)
+          if [ -z "$report" ]; then
+            echo "No Lighthouse HTML report found."
+            exit 0
+          fi
+          mkdir -p site
+          cp "$report" site/index.html
+      - name: Upload Pages artifact
+        if: always()
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - name: Deploy Pages
+        if: always()
+        uses: actions/deploy-pages@v4
+      - name: Upload Lighthouse artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-results
+          path: .lighthouseci
