@@ -2,13 +2,28 @@ name: Build and Deploy Firebase
 on:
   push:
     branches:
-      - master
+      - ci-dev
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      # - run: npm run build # Don't have a build process yet.
+      - name: Download Lighthouse artifact
+        uses: dawidd6/action-download-artifact@v3
+        continue-on-error: true
+        with:
+          workflow: lighthouse.yml
+          name: lighthouse-results
+          commit: ${{ github.sha }}
+          path: .lighthouseci
+      - name: Publish Lighthouse badge
+        if: always()
+        run: |
+          if [ -f ".lighthouseci/lighthouse-badge.json" ]; then
+            cp .lighthouseci/lighthouse-badge.json public/lighthouse-badge.json
+          else
+            echo "No Lighthouse badge found."
+          fi
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
