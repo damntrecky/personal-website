@@ -1,23 +1,22 @@
 name: Lighthouse CI
 on:
-  push:
+  workflow_run:
+    workflows: ["Build and Deploy"]
+    types:
+      - completed
     branches:
-      - ci-dev
-      
+      - master
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   lighthouse:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - name: Install dependencies
-        run: npm install
-      - name: Start static server
-        run: |
-          npx http-server public -p 8080 -c-1 &
-          sleep 2
       - name: Lighthouse CI
         id: lhci
         uses: treosh/lighthouse-ci-action@v12
@@ -25,10 +24,24 @@ jobs:
         with:
           configPath: ./lighthouserc.json
           uploadArtifacts: true
-      - name: Create Lighthouse badge artifact
+      - name: Prepare Pages report
         if: always()
         run: |
-          node -e "const fs=require('fs');const path='.lighthouseci/manifest.json';if(!fs.existsSync(path)){console.log('No Lighthouse manifest found');process.exit(0);}const data=JSON.parse(fs.readFileSync(path,'utf8'));const rep=data.find(d=>d.isRepresentativeRun)||data[0];if(!rep||!rep.summary){console.log('No Lighthouse summary found');process.exit(0);}const s=rep.summary;const pct=v=>Math.round(v*100);const message=`Perf ${pct(s.performance)} | Acc ${pct(s.accessibility)} | BP ${pct(s['best-practices'])} | SEO ${pct(s.seo)}`;const ok=[s.performance,s.accessibility,s['best-practices'],s.seo].every(v=>v>=0.9);const badge={schemaVersion:1,label:'Lighthouse',message,color:ok?'brightgreen':'orange'};fs.writeFileSync('.lighthouseci/lighthouse-badge.json',JSON.stringify(badge));"
+          report=$(ls -t .lighthouseci/*.html 2>/dev/null | head -n 1)
+          if [ -z "$report" ]; then
+            echo "No Lighthouse HTML report found."
+            exit 0
+          fi
+          mkdir -p site
+          cp "$report" site/index.html
+      - name: Upload Pages artifact
+        if: always()
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - name: Deploy Pages
+        if: always()
+        uses: actions/deploy-pages@v4
       - name: Upload Lighthouse artifacts
         if: always()
         uses: actions/upload-artifact@v4
