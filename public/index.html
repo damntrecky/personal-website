@@ -1,29 +1,31 @@
 <!DOCTYPE html>
-<html lang="en" class="wa-theme-awesome wa-palette-bright wa-brand-blue">
+<html lang="en" class="wa-theme-awesome wa-palette-bright">
 
   <head>
     <meta charset="UTF-8" />
     <title>Nick Ardecky | JavaScript Lover | Web Developer | Senior Front End Engineer | Senior Software Engineer | Product Developer</title>
     <meta name="description"
-      content="A personal website for Nick Ardecky display information about my work life, my internet persona and personal infos about me.">
+      content="A personal website for Nick Ardecky; Senior Front End Engineer, Senior Software Engineer, and Product Developer. Display information about my work life, my internet persona, and personal infos about me.">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="X-UA-Compatible" content="IE=11">
     <meta name="twitter:title" content="Nick Ardecky aka Damntrecky">
     <meta name="twitter:description"
-      content="A personal website for Nick Ardecky display information about my work life, my internet persona and personal infos about me.">
+      content="A personal website for Nick Ardecky; Senior Front End Engineer, Senior Software Engineer, and Product Developer. Display information about my work life, my internet persona, and personal infos about me.">
     <meta name="twitter:image" content="https://pbs.twimg.com/profile_images/987115869837803520/Pxb87Dlh_400x400.jpg">
     <!-- alternative twitter:image -->
     <!-- <meta name="twitter:image" content="https://d2ddoduugvun08.cloudfront.net/items/0V181I0F3K3y0H0b1d0X/nick-ardecky-twitter-card.png?X-CloudApp-Visitor-Id=3179966"> -->
     <meta name="twitter:site" content="@nardecky">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     
-    <!-- import prefixed/minified styles -->
-    <link rel="stylesheet" type="text/css" href="header.css">
-    <link rel="stylesheet" type="text/css" href="main.css">
+    <!-- Priority styles loaded first -->
+    <link rel="stylesheet" type="text/css" href="header.css" />
 
     <!-- Import webawesome web-component assets from local -->
-    <link rel="stylesheet" href="assets/webawesome/styles/themes/awesome.css" />
+    <link rel="stylesheet" type="text/css" href="assets/webawesome/styles/themes/awesome.css" />
+
+    <!-- Secondary styles applied after web-awesome -->
+    <link rel="stylesheet" type="text/css" href="main.css" />
 
   </head>
 
@@ -32,6 +34,13 @@
     <section class="content--wrapper">
       <!-- stripe background and icons -->
       <div class="main--container">
+        <!-- color scheme toggle only absolute to this container -->
+        <div class="theme-toggle--container">
+        <wa-button id="theme-toggle-button" appearance="outlined" aria-labelledby="color-scheme-tooltip" variant="neutral" size="medium">
+          <wa-icon name="sun" variant="regular" class="wa-icon-light-theme"></wa-icon>
+          <wa-icon name="moon" variant="regular" class="wa-icon-dark-theme"></wa-icon>
+        </wa-button>
+      </div>
         <div class="StripeBackground">
           <div class="stripe s0"></div>
           <div class="stripe s1"></div>
@@ -158,22 +167,33 @@
       <section data-section-id="main-content">
         <div class="headline--container">
           <h1>
-            Web developer, <s>Typescript</s> Javascript lover and full time sender.
+            Web developer, <s>Javascript</s> Typescript lover and full time sender.
           </h1>
           <p>
-            Actively looking for senior front end engineering positions. Most likely surfing some snow or riding my mountain bike somewhere...
+            <strong>Actively looking for senior front end engineering positions. Most likely surfing some snow or riding my mountain bike somewhere...</strong>
           </p>
         </div>
         
         <div class="employment-cards--container">
           <wa-card class="card-header">
-            <h3 slot="header">Current Employment</h3>
-            <p>Currently contracting and open to part-time or full-time opportunities.</p>
-            <p>I'm a Senior Front-End Engineer with 10+ years of experience building high-scale web applications. Expert in TypeScript, React, Web Components, and modern JavaScript performance optimization. Proven track record leading end-to-end development of production consoles and developer tools used by thousands, with extensive AWS and CI/CD expertise. Open to full-time or part-time opportunities.</p>
+            <!-- Slotted card content -->
+            <h2 slot="header">About me</h2>
+            <div slot="header-actions">
+              <wa-badge appearance="accent" variant="brand">Full time sender</wa-badge>
+            </div>
+            <p>Outside of work, I enjoy dirt biking, snowboarding, and mountain biking, often on my dirt jumper. Fun fact, I've broken over 26 bones! My favorite sport to watch is soccer, which I recently stopped playing competitively. I also spend time on hobbies like building out my van, working on cars, and exploring new areas of life such as learning Portuguese and Jiu Jitsu.</p>
+            <p>I'm a Senior Front-End Engineer with 10+ years of experience building high-scale web applications. I specialize in TypeScript, React, Web Components, and modern JavaScript performance optimization. I have a proven track record leading end-to-end development of production consoles and developer tools used by thousands, with extensive AWS and CI/CD expertise. I'm open to full-time or part-time opportunities.</p>
           </wa-card>
 
           <wa-card class="card-header">
-            <h3 slot="header">Previous Employment</h3>
+            <!-- Slotted card content -->
+            <h2 slot="header">Previous employment</h2>
+            <div slot="header-actions">
+              <wa-badge appearance="accent" variant="brand">Web</wa-badge>
+              <wa-badge appearance="accent" variant="brand">Mobile</wa-badge>
+              <wa-badge appearance="accent" variant="brand">Client</wa-badge>
+              <wa-badge appearance="accent" variant="brand">Server</wa-badge>
+            </div>
             <ul>
               <li>
                 Previously employed at <a href="https://amazon.jobs/content/en/teams/ftr" rel="noreferrer noopener">Amazon AFT</a>,
@@ -222,6 +242,7 @@
     <script defer type="module"src="assets/webawesome/components/card/card.js"></script>
     <script defer type="module"src="assets/webawesome/components/button/button.js"></script>
     <script defer type="module"src="assets/webawesome/components/icon/icon.js"></script>
+    <script defer type="module"src="assets/webawesome/components/badge/badge.js"></script>
 
   </body>
 </html>
