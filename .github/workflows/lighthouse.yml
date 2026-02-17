@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - ci-dev
-      
+
 jobs:
   lighthouse:
     runs-on: ubuntu-latest
@@ -25,10 +25,10 @@ jobs:
         with:
           configPath: ./lighthouserc.json
           uploadArtifacts: true
-      - name: Create Lighthouse badge artifact
-        if: always()
-        run: |
-          node -e "const fs=require('fs');const path='.lighthouseci/manifest.json';if(!fs.existsSync(path)){console.log('No Lighthouse manifest found');process.exit(0);}const data=JSON.parse(fs.readFileSync(path,'utf8'));const rep=data.find(d=>d.isRepresentativeRun)||data[0];if(!rep||!rep.summary){console.log('No Lighthouse summary found');process.exit(0);}const s=rep.summary;const pct=v=>Math.round(v*100);const message=`Perf ${pct(s.performance)} | Acc ${pct(s.accessibility)} | BP ${pct(s['best-practices'])} | SEO ${pct(s.seo)}`;const ok=[s.performance,s.accessibility,s['best-practices'],s.seo].every(v=>v>=0.9);const badge={schemaVersion:1,label:'Lighthouse',message,color:ok?'brightgreen':'orange'};fs.writeFileSync('.lighthouseci/lighthouse-badge.json',JSON.stringify(badge));"
+    #   - name: Create Lighthouse badge artifact
+    #     if: always()
+    #     run: |
+    #       node -e "const fs=require('fs');const path='.lighthouseci/manifest.json';if(!fs.existsSync(path)){console.log('No Lighthouse manifest found');process.exit(0);}const data=JSON.parse(fs.readFileSync(path,'utf8'));const rep=data.find(d=>d.isRepresentativeRun)||data[0];if(!rep||!rep.summary){console.log('No Lighthouse summary found');process.exit(0);}const s=rep.summary;const pct=v=>Math.round(v*100);const message=`Perf ${pct(s.performance)} | Acc ${pct(s.accessibility)} | BP ${pct(s['best-practices'])} | SEO ${pct(s.seo)}`;const ok=[s.performance,s.accessibility,s['best-practices'],s.seo].every(v=>v>=0.9);const badge={schemaVersion:1,label:'Lighthouse',message,color:ok?'brightgreen':'orange'};fs.writeFileSync('.lighthouseci/lighthouse-badge.json',JSON.stringify(badge));"
       - name: Upload Lighthouse artifacts
         if: always()
         uses: actions/upload-artifact@v4
