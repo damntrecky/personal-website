@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - ci-dev
+      
 jobs:
   lighthouse:
     runs-on: ubuntu-latest
