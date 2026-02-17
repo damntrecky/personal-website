@@ -4,7 +4,7 @@ A personal website for ~~JavaScript~~ Typescript lover and data viz product spec
 
 ## Continuous Integration (CI)
 
-I use GitHub Actions to deploy my [website](https://www.nickardecky.com) and to run and deploy [Lighthouse results](https://github.com/damntrecky/personal-website/actions/workflows/lighthouse.yml/badge.svg).
+I use GitHub Actions to deploy my [website](https://www.nickardecky.com) and to run and deploy [Lighthouse results](https://damntrecky.github.io/personal-website/).
 
 ![](https://github.com/damntrecky/personal-website/workflows/Build%20and%20Deploy/badge.svg)
 [![Lighthouse CI Results](https://github.com/damntrecky/personal-website/actions/workflows/lighthouse.yml/badge.svg)](https://damntrecky.github.io/personal-website/)
@@ -37,6 +37,7 @@ I use GitHub Actions to deploy my [website](https://www.nickardecky.com) and to 
 For local development, run `http-server` to serve the `public/` directory. All necessary file changes will be made in the `public/` folder.
 
 ### Tech stack
+
 This reposotiry uses vanilla HTML, CSS, and JavaScript. No fancy gimmics, Typescript, post compilers or pre-processors. We keeping it lean here for quick iteration and strong performance.
 
 ### Hosting
