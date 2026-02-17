@@ -14,30 +14,26 @@
   --wa-color-brand-70: rgba(103, 114, 229, 0.3);
   --wa-color-brand-50: rgba(103, 114, 229, 0.6);
   --wa-color-brand-30: rgba(103, 114, 229, 0.8);
-  
-  /* Fill variables */
-  --wa-color-fill-quiet: var(--wa-color-brand-95) !important;
-  --wa-color-fill-normal: var(--wa-color-brand-90) !important;
-  --wa-color-fill-loud: var(--wa-color-brand-30) !important;
-  
-  /* Border variables */
-  --wa-color-border-quiet: var(--wa-color-brand-70) !important;
-  --wa-color-border-normal: var(--wa-color-brand-50) !important;
-  --wa-color-border-loud: rgba(103, 114, 229, 1) !important;
-  
-  /* On (text/content) variables - using tertiary-accent for contrast */
+}
+
+/* Light mode - explicit overrides */
+html:not(.wa-dark) {
   --wa-color-on-quiet: rgba(66, 66, 66, 0.6);
   --wa-color-on-normal: rgba(66, 66, 66, 0.8);
   --wa-color-on-loud: rgba(66, 66, 66, 1);
-  
-  /* Interaction states */
-  --wa-color-mix-hover: black 10%;
-  --wa-color-mix-active: black 20%;
-
-  /* wa-badge overrides */
   --wa-color-brand-on-quiet: rgba(66, 66, 66, 0.6);
   --wa-color-brand-on-normal: rgba(66, 66, 66, 0.8);
   --wa-color-brand-on-loud: rgba(66, 66, 66, 1);
+}
+
+/* Dark mode - inverted overrides */
+html.wa-dark {
+  --wa-color-on-quiet: rgba(200, 210, 255, 0.7);
+  --wa-color-on-normal: rgba(230, 235, 255, 0.9);
+  --wa-color-on-loud: #ffffff;
+  --wa-color-brand-on-quiet: rgba(200, 210, 255, 0.7);
+  --wa-color-brand-on-normal: rgba(230, 235, 255, 0.9);
+  --wa-color-brand-on-loud: #ffffff;
 }
 
 html,
@@ -52,9 +48,20 @@ body {
   scroll-snap-type: y mandatory;
 }
 
+html.wa-dark,
+html.wa-dark body {
+  background: #1a1a1a;
+  --grey--1: #1a1a1a;
+  --grey--0: #2a2a2a;
+}
+
 h1 { color: var(--main--accent); }
-h2 { color: var(--secondary--accent); }
-h3 { color: var(--tertiary--accent); }
+h2 { color: var(--tertiary--accent); }
+h3 { color: var(--secondary--accent); }
+
+html.wa-dark h1 { color: rgba(103, 114, 229, 0.9); }
+html.wa-dark h2 { color: rgba(200, 200, 200, 1); }
+html.wa-dark h3 { color: rgba(255, 162, 123, 0.85); }
 
 .main--container {
   width: 100%;
@@ -121,6 +128,27 @@ h3 { color: var(--tertiary--accent); }
   background: linear-gradient(90deg, #ecf4fa, #e4eff6);
 }
 
+/* Dark mode stripe backgrounds */
+html.wa-dark .StripeBackground .s0 {
+  background: -webkit-gradient(linear, left top, right top, from(#2a2a3e), to(#1f1f2e));
+  background: linear-gradient(90deg, #2a2a3e, #1f1f2e);
+}
+
+html.wa-dark .StripeBackground .s1 {
+  background: -webkit-gradient(linear, left top, right top, from(#1f1f2e), to(#252538));
+  background: linear-gradient(90deg, #1f1f2e, #252538);
+}
+
+html.wa-dark .StripeBackground .s2 {
+  background: -webkit-gradient(linear, left top, right top, from(#2d2d42), to(#262735));
+  background: linear-gradient(90deg, #2d2d42, #262735);
+}
+
+html.wa-dark .StripeBackground .s3 {
+  background: -webkit-gradient(linear, left top, right top, from(#262735), to(#2a2a3e));
+  background: linear-gradient(90deg, #262735, #2a2a3e);
+}
+
 /* make width really wide so icons are never scrunched together */
 .icons--container {
   width: 3000px;
@@ -148,6 +176,10 @@ h3 { color: var(--tertiary--accent); }
   box-shadow: 0 1px 12px rgba(0, 0, 0, .1);
 }
 
+html.wa-dark .icon svg {
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
+}
+
 .icon span {
   text-align: center;
   opacity: 0;
@@ -158,6 +190,12 @@ h3 { color: var(--tertiary--accent); }
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
   margin-top: 4px;
   /* @TODO calculate centering tooltip */
+}
+
+html.wa-dark .icon span {
+  background: #2a2a2a;
+  color: #e0e0e0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .icon[active] span,
@@ -193,6 +231,14 @@ h3 { color: var(--tertiary--accent); }
   color: var(--link--main);
 }
 
+html.wa-dark .headline--container p {
+  color: rgba(200, 200, 200, 1);
+}
+
+html.wa-dark .content--wrapper a {
+  color: rgba(100, 180, 255, 1);
+}
+
 
 /* Style employment card positioning */
 .employment-cards--container {
@@ -219,6 +265,7 @@ h3 { color: var(--tertiary--accent); }
 .resume-action--container {
   text-align: center;
   margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 .resume-action--container wa-button {   
   text-decoration:none;

@@ -5,13 +5,13 @@
     <meta charset="UTF-8" />
     <title>Nick Ardecky | JavaScript Lover | Web Developer | Senior Front End Engineer | Senior Software Engineer | Product Developer</title>
     <meta name="description"
-      content="A personal website for Nick Ardecky display information about my work life, my internet persona and personal infos about me.">
+      content="A personal website for Nick Ardecky; Senior Front End Engineer, Senior Software Engineer, and Product Developer. Display information about my work life, my internet persona, and personal infos about me.">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="X-UA-Compatible" content="IE=11">
     <meta name="twitter:title" content="Nick Ardecky aka Damntrecky">
     <meta name="twitter:description"
-      content="A personal website for Nick Ardecky display information about my work life, my internet persona and personal infos about me.">
+      content="A personal website for Nick Ardecky; Senior Front End Engineer, Senior Software Engineer, and Product Developer. Display information about my work life, my internet persona, and personal infos about me.">
     <meta name="twitter:image" content="https://pbs.twimg.com/profile_images/987115869837803520/Pxb87Dlh_400x400.jpg">
     <!-- alternative twitter:image -->
     <!-- <meta name="twitter:image" content="https://d2ddoduugvun08.cloudfront.net/items/0V181I0F3K3y0H0b1d0X/nick-ardecky-twitter-card.png?X-CloudApp-Visitor-Id=3179966"> -->
@@ -34,6 +34,13 @@
     <section class="content--wrapper">
       <!-- stripe background and icons -->
       <div class="main--container">
+        <!-- color scheme toggle only absolute to this container -->
+        <div class="theme-toggle--container">
+        <wa-button id="theme-toggle-button" appearance="outlined" aria-labelledby="color-scheme-tooltip" variant="neutral" size="medium">
+          <wa-icon name="sun" variant="regular" class="wa-icon-light-theme"></wa-icon>
+          <wa-icon name="moon" variant="regular" class="wa-icon-dark-theme"></wa-icon>
+        </wa-button>
+      </div>
         <div class="StripeBackground">
           <div class="stripe s0"></div>
           <div class="stripe s1"></div>
@@ -160,17 +167,17 @@
       <section data-section-id="main-content">
         <div class="headline--container">
           <h1>
-            Web developer, <s>Typescript</s> Javascript lover and full time sender.
+            Web developer, <s>Javascript</s> Typescript lover and full time sender.
           </h1>
           <p>
-            Actively looking for senior front end engineering positions. Most likely surfing some snow or riding my mountain bike somewhere...
+            <strong>Actively looking for senior front end engineering positions. Most likely surfing some snow or riding my mountain bike somewhere...</strong>
           </p>
         </div>
         
         <div class="employment-cards--container">
           <wa-card class="card-header">
             <!-- Slotted card content -->
-            <h3 slot="header">About me</h3>
+            <h2 slot="header">About me</h2>
             <div slot="header-actions">
               <wa-badge appearance="accent" variant="brand">Full time sender</wa-badge>
             </div>
@@ -180,9 +187,12 @@
 
           <wa-card class="card-header">
             <!-- Slotted card content -->
-            <h3 slot="header">Previous employment</h3>
+            <h2 slot="header">Previous employment</h2>
             <div slot="header-actions">
-              <wa-badge appearance="accent" variant="brand">Check out these skillz</wa-badge>
+              <wa-badge appearance="accent" variant="brand">Web</wa-badge>
+              <wa-badge appearance="accent" variant="brand">Mobile</wa-badge>
+              <wa-badge appearance="accent" variant="brand">Client</wa-badge>
+              <wa-badge appearance="accent" variant="brand">Server</wa-badge>
             </div>
             <ul>
               <li>

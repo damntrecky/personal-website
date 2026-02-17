@@ -1,3 +1,61 @@
+:root {
+  --main--accent:#6772e5;
+  --secondary--accent:rgb(255, 162, 123);
+  --tertiary--accent:#424242;
+  
+  --grey--0: #ffffff;
+  --grey--1: #f5f5f5;
+
+  --link--main: #42a5f5;
+
+  /* Webawesome root overrides */
+  --wa-color-brand-95: rgba(103, 114, 229, 0.05);
+  --wa-color-brand-90: rgba(103, 114, 229, 0.1);
+  --wa-color-brand-70: rgba(103, 114, 229, 0.3);
+  --wa-color-brand-50: rgba(103, 114, 229, 0.6);
+  --wa-color-brand-30: rgba(103, 114, 229, 0.8);
+  
+  /* Fill variables */
+  --wa-color-fill-quiet: var(--wa-color-brand-95) !important;
+  --wa-color-fill-normal: var(--wa-color-brand-90) !important;
+  --wa-color-fill-loud: var(--wa-color-brand-30) !important;
+  
+  /* Border variables */
+  --wa-color-border-quiet: var(--wa-color-brand-70) !important;
+  --wa-color-border-normal: var(--wa-color-brand-50) !important;
+  --wa-color-border-loud: rgba(103, 114, 229, 1) !important;
+  
+  /* Interaction states */
+  --wa-color-mix-hover: black 10%;
+  --wa-color-mix-active: black 20%;
+}
+
+
+/* Theme toggle button CSS */
+.theme-toggle--container {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+}
+
+.wa-icon-dark-theme {
+  display:none;
+}
+.wa-dark .theme-toggle--container .wa-icon-dark-theme {
+  display: initial;
+}
+
+.wa-dark .theme-toggle--container .wa-icon-light-theme {
+  display: none;
+}
+/* End of theme toggle button CSS */
+
+/* Add padding to wa-card head actions badge content */
+[slot="header-actions"] wa-badge {
+  margin-bottom: 0.25rem;
+}
+
 section[data-snap] {
   scroll-snap-align: start;
 }
