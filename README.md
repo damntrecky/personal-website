@@ -4,7 +4,7 @@ A personal website for ~~JavaScript~~ Typescript lover and data viz product spec
 
 ## Continuous Integration (CI)
 
-I use GitHub Actions to deploy my [website](https://www.nickardecky.com) and to run and deploy [Lighthouse results](https://github.com/damntrecky/personal-website/actions/workflows/lighthouse.yml/badge.svg).
+I use GitHub Actions to deploy my [website](https://www.nickardecky.com) and to run and deploy [Lighthouse results](https://damntrecky.github.io/personal-website/).
 
 ![](https://github.com/damntrecky/personal-website/workflows/Build%20and%20Deploy/badge.svg)
 [![Lighthouse CI Results](https://github.com/damntrecky/personal-website/actions/workflows/lighthouse.yml/badge.svg)](https://damntrecky.github.io/personal-website/)
