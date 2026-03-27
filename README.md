@@ -37,6 +37,7 @@ I use GitHub Actions to deploy my [website](https://www.nickardecky.com) and to 
 For local development, run `http-server` to serve the `public/` directory. All necessary file changes will be made in the `public/` folder.
 
 ### Tech stack
+
 This reposotiry uses vanilla HTML, CSS, and JavaScript. No fancy gimmics, Typescript, post compilers or pre-processors. We keeping it lean here for quick iteration and strong performance.
 
 ### Hosting
